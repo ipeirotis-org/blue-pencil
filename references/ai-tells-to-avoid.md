@@ -71,10 +71,10 @@ McCloskey on economists and Dijkstra on computer scientists both argued that rhe
 
 Do not use em-dashes in this manuscript. (The em-dash character itself is intentionally not printed here; replace any instance with one of the following.) The em-dash has become an LLM tell because models reach for it as a default when the right move is one of:
 
+- Two sentences, when both halves can stand alone (check this first on any sentence already past about 25 words, per `One topic per sentence` in `references/sentence-patterns.md`)
+- A colon, when the second clause expands or specifies the first
 - A comma, when the parenthetical is short and tight
 - Parentheses, when the aside is genuinely separable
-- A colon, when the second clause expands or specifies the first
-- Two sentences, when both halves can stand alone
 
 Every em-dash in a draft should be replaced with one of these alternatives.
 

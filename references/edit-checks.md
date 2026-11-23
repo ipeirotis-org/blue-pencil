@@ -58,11 +58,11 @@ Kleinberg-Tardos and Varian both build understanding before introducing exceptio
 
 ## 7. Named items in remembered lists
 
-When a list is meant to be remembered (design principles, methodological commitments, contribution bullets), give each item a name.
+When a list is meant to be remembered (design principles, methodological commitments, contribution bullets), give each item a concrete name.
 
-**Edit check.** Replace "First, ... Second, ... Third, ..." with named items wherever the list is meant to be remembered. Numbered items are forgotten; named ones get cited.
+**Edit check.** Replace "First, ... Second, ... Third, ..." with named items wherever the list is meant to be remembered. Numbered items are forgotten; named ones get cited. Then read each bold item name (and each subsection heading) cold, by itself: could a venue reader tell what concrete objects, baselines, or mechanisms the item covers before reading the body of the bullet? Two habits make a name fail that test: evaluative meta-nouns that assert correctness while hiding the referent ("A fairness audit against the right comparator" instead of "Subgroup fairness audit against attention checks and psychometric indices"), and compressed metaphors or lab shorthand dressed as technical modifiers ("Complementarity with leveled baselines" when the body means baselines evaluated on matched inputs). Replace the opaque label with the concrete nouns already stated inside the item; if the body never names them, flag the gap in `Author questions`.
 
-Lampson's "Hints for Computer System Design" is the canonical example: the hints survive because each has a name. This check does not apply to lists that are purely sequential ("first we did X, then Y").
+Lampson's "Hints for Computer System Design" is the canonical example: the hints survive because each has a plain, specific name. This check does not apply to lists that are purely sequential ("first we did X, then Y").
 
 ## 8. Argue by analogy when the analogy holds
 

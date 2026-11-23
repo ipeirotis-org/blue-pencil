@@ -8,10 +8,22 @@ Subtraction is the highest-yield edit and the easiest to botch. "Omit needless w
 
 Separate them, because "be concise" hides the difference.
 
-- **Compress.** Say the same thing in fewer words: a verb for a nominalisation, "because" for "due to the fact that", the deleted throat-clearing opener. Information content is preserved, so compression is near zero-risk. Apply it freely; it is most of the cut.
+- **Compress.** Say the same thing in fewer words while keeping explicit grammar and standard nouns: a verb for a nominalisation, "because" for "due to the fact that", the deleted throat-clearing opener. While the grammar stays explicit, information content is preserved and compression is near zero-risk. Apply it freely within the floor below; it is most of the cut.
 - **Delete.** Remove a unit (sentence, example, caveat, paragraph, section) entirely. This changes what the text says, so it carries real risk. Apply the keep-test first.
 
-Rule of thumb: compress freely, gate deletion.
+Rule of thumb: compress freely down to the floor, gate deletion.
+
+## The compression floor: when shortening breaks the parse
+
+Compression stops being free the moment it strips grammatical scaffolding or coins private shorthand to save two or three words (ASD-STE100 rules 1.10, 2.1, and 4.2 in `references/principles.md`). Under a page or word limit, drafts and LLM passes routinely over-compress in three ways:
+
+| Over-compressed | Restored | Defect |
+|---|---|---|
+| Surveys retaining check failers (`N = 1,003` completes) | Surveys that retain respondents who failed attention checks (`N = 1,003` completed responses) | Coined lab shorthand ("check failers", "completes", "check-bearing") where plain nouns belong |
+| Complementarity with leveled psychometric baselines | Complementarity with psychometric baselines on matched inputs | Metaphor ("leveling the playing field") compressed into a fake technical modifier that collides with "ordinal levels" |
+| Full-survey inputs lift 92-variable disjoint `\citet{kann2018}` and 61%-skipped `\citet{mastroianni2022}` | Full-survey inputs lift the 92-variable disjoint specification of `\citet{kann2018}` and `\citet{mastroianni2022}`, where 61% of items are skipped | Dropped head noun stacks dataset modifiers directly onto the cited authors (`references/copyediting.md`, item 10) |
+
+Spending two or three function words ("of", "who", "where", "that") and an explicit head noun ("respondents", "specification", "survey") outranks saving words, even when cutting toward a length limit. Established terms of art of the venue stay; project-internal slang and telegraphic modifier stacks do not. When you cannot tell from the manuscript what noun a compressed modifier ("leveled", "disjoint") abbreviates, keep the author's wording and ask in `Author questions` rather than guessing.
 
 ## The 80% is a prior, not a quota
 

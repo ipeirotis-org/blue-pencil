@@ -17,7 +17,7 @@ Perform these edits when they are safe:
 7. **Units and symbols.** Preserve numerical values. Normalize spacing and wording only when it does not alter the claim, such as using the same unit style across nearby sentences. Flag any uncertain unit conversion or symbol change.
 8. **Tense and aspect.** Match disciplinary convention and section function. Prior work is usually past tense when describing a specific study, present tense when describing an established result or what a paper argues. Methods are often past tense for completed studies. Results often use past tense for observed outcomes and present tense for tables, figures, and persistent interpretations.
 9. **Table and figure callouts.** Keep references in logical order and ensure each callout has a clear reason. Do not renumber or invent references.
-10. **Citation punctuation.** Move punctuation around citation commands only when required by the local sentence grammar. Do not alter citation keys or citation commands.
+10. **Citation syntax and punctuation.** Move punctuation around citation commands only when required by the local sentence grammar, and do not alter citation keys or citation commands. Check how textual citations (`\citet{...}`, `\cite{...}`, `Smith et al. (2020)`) sit in the surrounding English clause: do not leave dataset, sample, or model adjectives stacked directly onto a bare citation as if the authors were the noun ("on 61%-skipped `\citet{mastroianni2022}`", "on 92-variable disjoint `\citet{kann2018}`"). Supply the head noun from context ("on the 92-variable disjoint specification of `\citet{kann2018}`", or "on `\citet{mastroianni2022}`, where 61% of items are skipped"); when the context does not settle what noun is meant, ask in `Author questions`, and flag any numerical-clause rephrasing under the numerical-claim constraint (`references/subtraction.md`, "The compression floor").
 11. **One word, one sense.** Each occurrence of a multi-sense word should be readable in only one of its senses; where an occurrence could be read in two, prefer the word that has only the sense you mean. The check is per occurrence: "as a control" (role) and "as specified" (manner) in the same section are both clear and both stay. What fails is a single occurrence the reader can take two ways. The principle comes from ASD-STE100, whose dictionary gives each approved word one meaning (`references/principles.md`). The frequent academic cases:
     - "since" (time or cause): use "because" for cause, keep "since" for time.
     - "as" (cause, time, manner, or role): use "because" for cause, "while" or "when" for time; keep "as" for manner and role ("as a control").
@@ -72,6 +72,7 @@ Use the inventory to prevent drift. Do not report the full inventory unless it r
 - The sense of a multi-sense word ("should", "may", "since") or a possible false friend, when the context does not fix it.
 - "i.e." against "e.g.", since one claims a complete list and the other a sample.
 - Citation style beyond sentence-level punctuation.
+- Inline LaTeX pagination or line-breaking overrides (`\looseness`, `\widowpenalty`, `\clubpenalty`, `\interfootnotelinepenalty`, `\emergencystretch`, `\enlargethispage`, `\newpage`, `\pagebreak`): Constraint 5 keeps all markup intact, so leave the command in place, but flag it in `Author questions` when editing its paragraph because wording changes invalidate paragraph-local line-breaking tweaks and global widow, orphan, or stretch settings belong in the preamble.
 
 Put these in `Author questions` when they block a safe edit.
 
@@ -88,4 +89,4 @@ Before returning the rewrite, verify:
 - Table, figure, equation, section, and appendix references were not renumbered or invented.
 - Tense choices match section function and disciplinary convention.
 - No occurrence of a multi-sense word ("since", "as", "while", "once", "may", "should") can be read in two senses.
-- No reporting verb ("found", "show", "assume") drops a "that" where the next noun could be misread as its object (`references/sentence-patterns.md`, "The dropped connector").
+- No reporting verb ("found", "show", "assume") drops a "that" where the next noun could be misread as its object (`references/sentence-patterns.md`, "The dropped connector"), and no textual citation sits without its head noun under stacked modifiers (item 10 above).

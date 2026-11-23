@@ -147,11 +147,10 @@ is the curse of knowledge in its purest form.
 
 ### Expert-only contrast
 
-The text says "unlike prior work" or "this differs from existing approaches" but
-never names the difference a non-specialist would recognise.
+The text says "unlike prior work" or "this differs from existing approaches", or titles a subsection or contribution bullet with an evaluative meta-noun ("against the right comparator", "with a proper baseline"), but never names the concrete comparator or difference a non-specialist would recognise.
 
-- Fix when safe: state the contrast directly.
-- Flag when unsafe: the contrast is asserted but not specified anywhere in the text.
+- Fix when safe: state the contrast and name the concrete comparator directly, including in the heading or bold lead-in (`references/edit-checks.md`, check 7).
+- Flag when unsafe: the contrast or comparator is asserted but not specified anywhere in the text.
 
 ### Abstract stack
 
