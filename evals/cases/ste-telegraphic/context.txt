@@ -1,0 +1,6 @@
+<paper_context>
+target_venue: MIS Quarterly
+audience: information systems and behavioral survey researchers, many reading English as a second language
+core_thesis: Simple pairwise graphical models and loss-trimmed autoencoders detect careless survey respondents without attention checks, complement standard psychometric indices, and require a subgroup fairness audit against attention checks and psychometric indices before respondent exclusion.
+revision_stage: first draft
+</paper_context>

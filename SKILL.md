@@ -217,7 +217,13 @@ the paper and is outside the rule.
    fences, and math spans; in any format it covers whatever encodes citations,
    cross-references, and math. Caption text (for example inside
    `\caption{...}`) is editable prose under the other constraints; the rest of
-   the environment stays opaque.
+   the environment stays opaque. Inline LaTeX pagination and line-breaking
+   overrides embedded in prose (`\looseness`, `\widowpenalty`, `\clubpenalty`,
+   `\interfootnotelinepenalty`, `\emergencystretch`, `\enlargethispage`,
+   `\newpage`, `\pagebreak`) stay protected under this rule, so never delete
+   them silently, but flag them in `Author questions` whenever you edit their
+   paragraph: prose changes invalidate paragraph-local line-breaking tweaks,
+   and global widow, orphan, or stretch settings belong in the preamble.
 6. Never silently delete content. Cuts must appear in `Change rationale` with
    a one-line reason. A qualifier is content: removing a scope or calibration
    qualifier is a deletion, never a compression (see the Subtraction section).
@@ -386,7 +392,7 @@ For deeper exposition (Williams, Gopen and Swan, Pinker, McEnerney, Mensh and Ko
 
 ## Subtraction: cutting to the story
 
-Subtraction is the highest-yield edit and the easiest to botch. Two operations carry different risk: *compress* (fewer words, same content) is near zero-risk, so apply it freely; *delete* (remove a whole unit) changes what the text says, so apply the keep-test first: if this goes, what does the reader lose? A unit earns its place if it advances the thesis, makes a claim believable, links two ideas the reader would not otherwise connect, serves a reader the other sentences do not, pre-empts a predictable objection, or sets rhythm. If it does none, cut it; if it does one, compress but keep. Most drafts carry 15 to 25% that does not serve the story: treat that figure as a prior, not a quota, and never manufacture cuts from a draft that is already tight.
+Subtraction is the highest-yield edit and the easiest to botch. Two operations carry different risk: *compress* (fewer words, same content, explicit grammar intact) is near zero-risk down to the compression floor in `references/subtraction.md` (never compress by coining lab shorthand like "check failers" or "completes", turning a metaphor into a fake modifier like "leveled baselines", or dropping the head noun before a citation); *delete* (remove a whole unit) changes what the text says, so apply the keep-test first: if this goes, what does the reader lose? A unit earns its place if it advances the thesis, makes a claim believable, links two ideas the reader would not otherwise connect, serves a reader the other sentences do not, pre-empts a predictable objection, or sets rhythm. If it does none, cut it; if it does one, compress within the floor but keep. Most drafts carry 15 to 25% that does not serve the story: treat that figure as a prior, not a quota, and never manufacture cuts from a draft that is already tight.
 
 Scale the action to the unit, because that scales to risk. Word or phrase: cut in the rewrite. Sentence: cut and log the loss in `Change rationale`. Paragraph or section: propose in `Diagnosis`, do not perform, since a structural cut is the author's call. The revision stage still binds: at `final polish`, compress only.
 
@@ -404,11 +410,11 @@ When the safe cut lands short, say by how much, and point at where further
 cuts would do the least harm or what could move to an appendix; closing the
 remaining gap is the author's call.
 
-Load `references/subtraction.md` for the full keep-test with its catalog of destructive cuts, the say-it-once rule, the scope-versus-filler reading-out test, the blind spot (subtraction never finds the missing step), and a worked example.
+Load `references/subtraction.md` for the compression floor, the full keep-test with its catalog of destructive cuts, the say-it-once rule, the scope-versus-filler reading-out test, the blind spot (subtraction never finds the missing step), and a worked example.
 
 ## Altitude: match detail to the section
 
-Every passage sits at an altitude, and detail has a home. High-altitude text (abstract, section openers, topic sentences, the contribution paragraph) states findings and claims; low-altitude text (Methods, Results, the body) carries the machinery: the model class, estimators, specification sweeps, confidence intervals, design caveats, single-source limitations. Prose reads obtuse when detail floats up out of its home section, so the reader meets the apparatus before they want it and the claim is buried inside it. This is a different axis from Subtraction: the keep-test asks whether a clause survives, the altitude test asks where the survivor belongs, and a load-bearing clause can still sit three sections too high.
+Every passage sits at an altitude, and detail has a home. High-altitude text (abstract, section openers, topic sentences, the contribution paragraph) states findings and claims; low-altitude text (Methods, Results, the body) carries the machinery: the model class, estimators, specification sweeps, confidence intervals, design caveats, single-source limitations. Prose reads obtuse when detail floats up out of its home section, so the reader meets the apparatus before they want it and the claim is buried inside it. This is a different axis from Subtraction: the keep-test asks whether a clause survives, the altitude test asks where a survivor belongs, and a load-bearing clause can still sit three sections too high.
 
 Three directives, whose exceptions and worked pairs live in `references/altitude.md`. Report the finding, not the machinery: above Results, a result is direction plus magnitude plus one significance marker, each clause of the apparatus sent down to the section the manuscript actually uses for it; simplify the wording, never the estimand (a cut in time is not a gain in speed), and keep its unit and estimate status. Send each caveat to its home section: a design qualification to Methods, a sample-size limitation to Limitations, never voiced at the moment the claim it qualifies is first stated; but a power qualifier on a null headline finding ("no detectable difference at this sample size") is scope that stays with the claim. Keep one number per claim: a confidence interval or secondary p-value stacked on the same headline figure rides down into the body, while an intrinsic keeper stays (a venue-required interval, a range whose spread is itself the finding, a load-bearing derived metric, or a baseline that makes a relative effect interpretable: "mortality fell 50%, from 2% to 1%").
 
@@ -473,15 +479,15 @@ Return a paragraph or sentence verbatim when the passage clears all of these:
 
 - Topic sentence in the first two sentences.
 - Coherent topic string across consecutive sentences.
-- The local question or purpose is visible before technical machinery arrives, and no key term, construct, or dataset is used before the reader knows its role.
+- The local question or purpose is visible before technical machinery arrives, no key term, construct, or dataset is used before the reader knows its role, and every named list item or heading names its concrete objects rather than an evaluative meta-noun ("the right comparator") or compressed metaphor ("leveled baselines") (`references/edit-checks.md`, check 7).
 - No relocatable detail sits above its home section: no inferential machinery, stacked interval, secondary statistic, tertiary derived rate, or preemptive caveat whose home section (Results, Methods, or Limitations) is in scope, since that clause would be relocated rather than returned verbatim. Detail that is kept rather than moved is not a violation: an item whose home section is out of scope or absent (so it is flagged or routed to `Author questions`, never cut), or an intrinsic keeper such as a power or sample-size qualifier on a null finding, a venue-required or precision-carrying interval, a range whose spread is itself the finding, a fragility-revealing robustness sweep, a load-bearing derived metric, or a load-bearing baseline or denominator behind a relative effect.
 - In an abstract, introduction, or contribution paragraph: no inline caveat clause or deferrable scope hedge rides a claim whose full statement lives in an in-scope later section (at most one forward-pointer signpost per claim), and no claim runs cleaner than the refinement-vs-retraction test allows. A kept hedge is not a violation when it is the keeper the test protects: an epistemic hedge on a central claim, a fragility marker, or a scope qualifier whose removal would let the claim broaden past its evidence (`references/precision-budget.md`).
 - Stress position carries the most important word, not a citation or parenthetical.
 - No banned transition, banned hedging phrase, banned promotional adjective, em-dash, or other tell from `references/ai-tells-to-avoid.md`.
 - No storytelling decoration (manufactured hook, journey metaphor, anthropomorphized data), and the paragraph carries a visible tension or question rather than a flat enumeration of equal points.
 - No nominalisation sits where an active verb belongs.
-- No occurrence of a multi-sense word ("since", "as", "while", "should") can be read in two senses, no dropped "that" or article invites a wrong parse, and no sentence carries two topics (`references/sentence-patterns.md`, `references/copyediting.md`).
-- No interrupting constituent (appositive, parenthetical, non-restrictive relative clause, interposed adverbial) and no chain of modifiers holds a clause's core open, separating any element from the word that completes it (a subject from its verb, a linking verb from its complement, a verb from its object or particle, or an object from its complement), and no stack of subordinate clauses precedes the core; each clause, embedded ones included, parses in one pass, though a brief parenthetical the reader resolves without losing the core may stay.
+- No occurrence of a multi-sense word ("since", "as", "while", "should") can be read in two senses, no dropped "that", article, or head noun before a modified citation invites a wrong parse, no coined lab shorthand ("check failers", "completes") replaces a plain noun, and no sentence welds multiple independent claims via semicolons, "while", or trailing "-ing" clauses (`references/sentence-patterns.md`, `references/subtraction.md`, `references/copyediting.md`).
+- No interrupting constituent (appositive, parenthetical, non-restrictive relative clause, interposed adverbial) and no chain of modifiers holds a clause's core open, separating any element from the word that completes it (a subject from its verb, a linking verb from its complement, a verb from its object or particle, or an object from its complement), and no stack of subordinate clauses or unmotivated paragraph-opening scope preamble precedes the core; each clause, embedded ones included, parses in one pass, though a brief parenthetical the reader resolves without losing the core may stay.
 - Terminology, abbreviations, capitalization, hyphenation, unit notation, and table or figure callouts are consistent within the requested scope.
 - Paragraphs end on a payoff, synthesis, or consequence rather than a procedural afterthought.
 - Claims, evidence, and interpretation are distinguishable.

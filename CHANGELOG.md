@@ -17,9 +17,16 @@ Format follows [Keep a Changelog](https://keepachangelog.com/). Versions use [Se
 - `evals/cases/ste-connectors`, `ste-procedure`, and `ste-vague`: hand-written cases for the ASD-STE100 diagnostics. `build_cases.py` keeps hand-written cases when it rebuilds the catalog.
 - `references/structural-patterns.md`: procedural passages in Methods (one step per sentence, order of performance, condition before action), the limitation without a consequence, and one claimed change per sentence in response letters.
 
+- `references/subtraction.md`: a compression floor against telegraphic shortening that coins lab shorthand ("check failers", "completes"), compresses metaphors into fake technical modifiers ("leveled baselines"), or drops the head noun before a modified citation ("on 61%-skipped `\citet{...}`").
+- `references/sentence-patterns.md`: expanded `One topic per sentence` to catch multi-claim welds built with semicolons, "while" or "whereas", and trailing "-ing" result clauses (with a guardrail in `Accumulation instead of argument`); expanded `The left-branching preamble` and `The prepositional chain` to catch unmotivated or repeated paragraph- and bullet-opening scope phrases ("Across nine surveys..., we evaluate...").
+- `references/edit-checks.md` and `references/exposition.md`: a cold-reader check on named list items and headings against evaluative meta-nouns ("against the right comparator") and compressed metaphors.
+- `SKILL.md` and `references/copyediting.md`: expanded item 10 to restore missing head nouns before modified textual citations, and clarified under Constraint 5 that inline LaTeX pagination and line-breaking overrides (`\looseness`, `\widowpenalty`, `\clubpenalty`, `\emergencystretch`) stay protected in `Revised text` while being flagged in `Author questions` when their paragraph is edited.
+- `evals/cases/ste-telegraphic`: targeted evaluation case exercising telegraphic shorthand, modified bare citations, fronted scope preambles, semicolon/while multi-claim chains, opaque contribution names, and inline LaTeX pagination overrides.
+
 ### Changed
 
 - `scripts/lint.sh` skips `evals/results/`, which holds raw saved model replies.
+- `references/ai-tells-to-avoid.md` lists two sentences first among em-dash replacements so removing an em-dash does not default to lengthening multi-clause sentences.
 - `SKILL.md`, `references/exposition.md`, `/paper:polish`, and `/paper:clarify` name the second-language reader and point to the new checks from the writing-quality rule, the restraint checklist, and the read-cold pass.
 
 ## [3.0.0] - 2026-08-14

@@ -1,0 +1,8 @@
+{\begin{enumerate}\clubpenalty=10000 \csname @clubpenalty\endcsname=10000 \widowpenalty=10000
+    \item \textbf{Pairwise versus global modeling.} Across nine public surveys retaining check failers, we evaluate a pairwise Chow-Liu tree~\citep{chow1968} alongside a $2\times 2$ comparison of linear and non-linear autoencoders trained with and without Percentile Loss. Simple pairwise contingency structure matches or beats tuned neural networks on eight of nine surveys at half the sample requirement and zero run-to-run randomness, while trimming high-error cases during training (rather than adding non-linear hidden layers) drives the $+0.04$ autoencoder gain ($0.64 \to 0.68$); under our measurement model, check agreement lower-bounds latent validity.
+
+    \item \textbf{Complementarity with leveled psychometric baselines.} Across full categorical surveys and matched Likert subsets (alongside one-hot Mahalanobis, PCA, and MCA baselines), Chow-Liu ($0.74$ mean AUC) and the Percentile-Loss autoencoder ($0.68$) beat the incumbent ordinal indices on average, scoring pure-categorical \citet{moss2023} at $0.76$/$0.73$ and lifting 92-variable disjoint \citet{kann2018} above ordinal indices (${\le}0.69$).\looseness=-1
+
+    \item \textbf{A fairness audit against the right comparator.} Pairing a practical benchmark against incumbent psychometric indices with a matched-prevalence test against attention checks across $1{,}003$ completes on 61\%-skipped \citet{mastroianni2022} shows that our detectors are no more biased than the incumbent indices on most axes, guiding when to screen directly or withhold hard exclusion.
+\end{enumerate}
+}

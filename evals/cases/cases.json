@@ -41,6 +41,12 @@
       "source": null,
       "revision_stage": "first draft",
       "origin": "targeted case for the ASD-STE100 diagnostics"
+    },
+    {
+      "id": "ste-telegraphic",
+      "source": null,
+      "revision_stage": "first draft",
+      "origin": "targeted case for the ASD-STE100 diagnostics"
     }
   ]
 }
